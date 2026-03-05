@@ -16,19 +16,14 @@ jobs:
 
     - name: clone
       env:
-        TOKEN: ${{ secrets.TMEMIGRATIONDRYRUN }}
+        TOKEN: ${{ secrets.PUBLIC_ORG }}
       run: |
           git config --global user.name "mirror-bot"
           git config --global user.email "mirror-bot@example.com"
-          
-          git clone --bare https://github.com/TME-Migration-Dryrun/opensource-source.git
 
-    - name: push
-      run: |
-
-          cd opensource-source
+          git remote add public https://x-access-token:$TOKEN@github.com/tme-rnd/opensource-mirror.git
           
-          git push --mirror https://x-access-token:${{ secrets.PUBLIC_ORG }}@github.com/tme-rnd/opensource-mirror.git
+          git push public main
         
     
     
