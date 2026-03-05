@@ -11,6 +11,8 @@ jobs:
   steps:
     - name: checkout
       uses: actions/checkout@v5
+      with:
+        fetch-depth: 0
 
     - name:
       run: |
@@ -18,7 +20,9 @@ jobs:
         git config --global user.email "mirror-bot@example.com"
 
         git remote add public https://x-access-token:${{ secrets.PUBLIC_ORG }}@github.com/tme-rnd/opensource-mirror.git
-
+        
+        git add .
+        git diff-index --quiet HEAD || git commit -m "commit message"
         git push public main
     
     
