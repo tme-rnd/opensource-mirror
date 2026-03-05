@@ -19,9 +19,9 @@ jobs:
           git config --global user.name "mirror-bot"
           git config --global user.email "mirror-bot@example.com"
           
-          git clone --bare https://github.com/${{ github.repository }} repo.git
+          git clone --bare https://github.com/TME-Migration-Dryrun/opensource-source.git
 
-          cd repo.git 
+          cd opensource-source
           
           git push --mirror https://x-access-token:${{ secrets.PUBLIC_ORG }}@github.com/tme-rnd/opensource-mirror.git
         
