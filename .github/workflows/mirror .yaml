@@ -14,12 +14,17 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name:
+    - name: clone
+      env:
+        TOKEN: ${{ secrets.TMEMIGRATIONDRYRUN }}
       run: |
           git config --global user.name "mirror-bot"
           git config --global user.email "mirror-bot@example.com"
           
           git clone --bare https://github.com/TME-Migration-Dryrun/opensource-source.git
+
+    - name: push
+      run: |
 
           cd opensource-source
           
