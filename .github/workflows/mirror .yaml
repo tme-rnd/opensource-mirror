@@ -16,14 +16,11 @@ jobs:
 
     - name:
       run: |
-        git config --global user.name "mirror-bot"
-        git config --global user.email "mirror-bot@example.com"
-
-                     
-        
-        git push --mirror https://x-access-token:${{ secrets.PUBLIC_ORG }}@github.com/tme-rnd/opensource-mirror.git
+          git push --mirror https://x-access-token:${{ secrets.PUBLIC_ORG }}@github.com/tme-rnd/opensource-mirror.git
         
     
     
+#git config --global user.name "mirror-bot"
+        #git config --global user.email "mirror-bot@example.com"
 
       #git remote add public https://x-access-token:${{ secrets.PUBLIC_ORG }}@github.com/tme-rnd/opensource-mirror.git
