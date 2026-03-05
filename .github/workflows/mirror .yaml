@@ -24,7 +24,8 @@ jobs:
         TOKEN: ${{ secrets.PUBLIC_ORG }}
       run: |
           git remote add public https://x-access-token:$TOKEN@github.com/tme-rnd/opensource-mirror.git 
-          git push --mirror public main --force 
+          git push --mirror public                 
+      #main --force 
         
     
 
