@@ -18,17 +18,22 @@ jobs:
     - name: remove .github
       run: |
         rm -rf .github
-     
+        rm -rf .i
+    - name: git congig
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"  
     - name: add remote
       env:
         TOKEN: ${{ secrets.PUBLIC_ORG }}
       run: |
-          git remote add public https://x-access-token:$TOKEN@github.com/tme-rnd/opensource-mirror.git 
-          git push --mirror public                 
-      #main --force 
-        
-    
-
-
-
-     
+          git remote add mirror https://x-access-token:$TOKEN@github.com/tme-rnd/opensource-mirror.git
+          
+    - name: add remote
+      run: |
+         git add .
+         git diff --cached --quiet || git commit -m "Excluding .github"
+         
+    - name: push
+      run: |
+          git push mirror HEAD:main --force 
