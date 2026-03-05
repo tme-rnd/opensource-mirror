@@ -19,10 +19,11 @@ jobs:
         git config --global user.name "mirror-bot"
         git config --global user.email "mirror-bot@example.com"
 
-        git remote add public https://x-access-token:${{ secrets.PUBLIC_ORG }}@github.com/tme-rnd/opensource-mirror.git
+                     
         
-        git add .
-        git diff-index --quiet HEAD || git commit -m "commit message"
-        git push public main
+        git push --mirror https://x-access-token:${{ secrets.PUBLIC_ORG }}@github.com/tme-rnd/opensource-mirror.git
+        
     
     
+
+      #git remote add public https://x-access-token:${{ secrets.PUBLIC_ORG }}@github.com/tme-rnd/opensource-mirror.git
