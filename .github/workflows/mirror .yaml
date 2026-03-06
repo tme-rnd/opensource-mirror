@@ -1,4 +1,4 @@
-name: push to public repo
+name: push to public org repo
 
 on:
   workflow_dispatch:
