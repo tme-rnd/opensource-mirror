@@ -28,7 +28,7 @@ jobs:
       env:
         TOKEN: ${{ secrets.PUBLIC_ORG }}
       run: |
-          git remote add mirror https://x-access-token:$TOKEN@github.com/tme-rnd/opensource-mirror.git
+          git remote add mirror https://x-access-token:$TOKEN@github.com/tme-xrnd/opensource-mirror_public.git
           
     - name: add remote
       run: |
