@@ -2,8 +2,8 @@ name: push to public repo
 
 on:
   workflow_dispatch:
-  push:
-   branches: main
+  ##push:
+   #branches: main
 
 jobs:
  mirror:
