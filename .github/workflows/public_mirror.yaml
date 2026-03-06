@@ -26,7 +26,7 @@ jobs:
         git config --global user.email "github-actions@github.com"  
     - name: add remote
       env:
-        TOKEN: ${{ secrets.PUBLIC_ORG }}
+        TOKEN: ${{ secrets.PUBLIC }}
       run: |
           git remote add mirror https://x-access-token:$TOKEN@github.com/tme-xrnd/opensource-mirror_public.git
           
